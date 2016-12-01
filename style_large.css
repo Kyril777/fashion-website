@@ -1,0 +1,295 @@
+/* Main styling sheet for Two Hearts. */
+html{
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+	}
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+
+/* Body and wrapper. */
+body{
+	padding: 0;
+	margin: 0;
+	font-family: 'Georgia', helvetica, serif;
+	background: url(../img/background.png) center center no-repeat fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	/* Img src: <a href='http://www.freepik.com/free-vector/classic-artistic-mosaic-background_835585.htm'>Designed by Freepik</a> */
+}
+
+#wrapper{
+	width: 1200px;
+	margin: 0 auto;
+	-webkit-box-shadow: 0 0 3px #000;
+	box-shadow: 0 0 6px #000;
+	background: #fff;
+}
+
+/* Paragraph tags. */
+p::first-letter{
+	font-size: 1.20em;
+}
+
+p.announcement{
+	font-family: Aria, Tahoma, sans-serif;
+	font-size: .75em;
+	text-align: center;	
+}
+
+p.menuItems{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 7px;
+	width: 130px;
+	border-radius: 10px;
+	font-weight: 900;
+	text-transform: lowercase;
+}
+
+p.menuItems:hover{
+	-webkit-animation: bounceIn 1s;
+    -moz-animation: bounceIn 1s;
+    animation: bounceIn 1s;
+}
+
+p#home{
+	display: none;
+}
+
+
+/* Index Contents */
+#header{
+	height: 30px;
+    background: gray; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(gray, silver); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(gray, silver); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(gray, silver); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(gray, silver); /* Standard syntax */
+	color: white;
+	display: inline-block;
+	width: 100%;
+}
+
+#footer{
+	height: 120px;
+	background: url(../img/footer-background.png) center center no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	color: white;
+	display: inline-block;
+	width: 100%;
+	font-size: 0.5em;	
+	text-align: center;
+}
+
+.footer-text{
+	margin-top: 4px;	
+}
+
+/* Index Contents -- Aside. */
+aside{
+	margin-left: 15px;
+	width: 200px;
+	float: left;
+}
+
+aside ul li a{
+	text-decoration: none;
+	color: #FF1493;
+}
+
+#logoContainer{
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+}
+
+
+#logoContainer img{
+	transition: transform .3s ease-in-out;
+}
+
+#logoContainer img:hover{
+	transform: translate3d(0px, -150px, 0px);
+}
+
+/* Index Contents -- Navigation. */
+nav{
+	width: 100%;
+	text-align: center;
+}
+
+ul.sb-icon-list{
+	list-style: none;
+	text-decoration: none;
+}
+
+li.sb-item{
+	display: inline;
+}
+
+aside ul li a:hover{
+	color: #C0C0C0;
+}
+
+/* SOCIAL ICONS */
+#social{
+	margin-left: 5px;
+}
+
+
+#first-sb, #second-sb, #third-sb, #fourth-sb{
+	float: left;
+	margin-top: 5px;
+	margin-right: 5px;
+	height: 20px;
+}
+
+/* Container. */
+.container{
+	margin-top: 5px;
+}
+
+#content{
+	width: 800px;
+}
+
+
+/* Media Queries. */
+@media only screen and (min-width: 481px) and (max-width: 768px){
+	#wrapper{
+		width: 767px;
+	}
+	
+	#content{
+		width: 767px;
+	}
+	
+	aside{
+		width: 767px;
+		height: 80px;
+	}
+	
+	#logoContainer{
+		display: none;
+	}
+	
+	.sb-icon-list{
+		float: left;
+	}
+	
+	li.sb-item{
+		display: inline-block;
+	}
+	
+	#first-sb, #second-sb, #third-sb, #fourth-sb{
+		display: none;
+	}
+	
+	.menuItems{
+		padding-left: 2px;
+		margin-right: 3px;
+		font-size: 15px;
+		width: 40px;
+	}
+	
+	#social{
+		display: none;
+	}
+	
+}
+
+@media only screen and (min-width: 0px) and (max-width: 768px){
+	p#home{
+		display: block;
+	}
+}
+
+
+@media only screen and (min-width: 0px) and (max-width: 480px){
+	#wrapper{
+		width: 479px;
+	}
+	
+	#header{
+		display: none;
+	}
+	
+	aside{
+		margin-left: 0px;
+		width: 100%;
+		float: left;
+		height: 400px;
+		background: #C0C0C0;
+	}
+	
+	aside ul li a{
+		color: #C0C0C0;
+	}
+	
+	aside ul li a:hover{
+		background: #000;
+		color: #fff;
+	}
+
+	
+	#logoContainer{
+		display: none;
+	}
+	
+
+	ul.sb-icon-list{
+		padding: 0px;
+	}
+	
+	li.sb-item{
+		width: 100%;
+		color: #fff;
+	}
+	
+	nav a{
+		display: block;
+		border-bottom: 1px dotted #CCC;
+		height: 60px;
+		background: #CC0066;
+		padding: 0px;
+	}
+	
+	#first-sb, #second-sb, #third-sb, #fourth-sb{
+		display: none;
+	}
+	
+	p.menuItems{
+		width: 100%;
+		margin: 0px;
+		padding-top: 20px;
+		border-radius: 0px;
+	}
+	
+	#social{
+		margin: auto 0;
+	}
+	
+	#social-title{
+		display: none;
+	}
+	
+}
