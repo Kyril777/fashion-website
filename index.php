@@ -5,100 +5,291 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Two Hearts Agency</title>
+	
+	<!-- Styling. -->
+	<style type="text/css">
+		.index-container{
+			width: 580px;
+			float: left;
+			height: 1100px;
+		}
+		
+		#new{
+			margin-top: 50px;
+			width: 780px;
+			float: left;
+		}
+		
+		#signup-txt{
+			font-weight: bold;
+			font-size: 1.25em;
+			color: #e6005c;
+		}
+		
+		#button-signup{
+			background:#5CCD00;
+			background:-moz-linear-gradient(top,#5CCD00 0%,#4AA400 100%);
+			background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#5CCD00),color-stop(100%,#4AA400));
+			background:-webkit-linear-gradient(top,#5CCD00 0%,#4AA400 100%);
+			background:-o-linear-gradient(top,#5CCD00 0%,#4AA400 100%);
+			background:-ms-linear-gradient(top,#5CCD00 0%,#4AA400 100%);
+			background:linear-gradient(top,#5CCD00 0%,#4AA400 100%);
+			filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#5CCD00', endColorstr='#4AA400',GradientType=0);
+			padding:10px 15px;
+			color:#fff;
+			font-family:'Helvetica Neue',sans-serif;
+			font-size:16px;
+			border-radius:5px;
+			-moz-border-radius:5px;
+			-webkit-border-radius:5px;
+			border:1px solid #459A00;
+		}
 
-	<title>Bucky's Template</title>
-	
-	<!-- CSS Normalize. -->
-	<link rel="stylesheet" type="text/css" href="css/normalize.css">
-	
-	<!-- CSS. -->
-	<link rel="stylesheet" type="text/css" href="css/style_large.css">
-	
-	<!-- CSS animate. -->
-	<link rel="stylesheet" type="text/css" href="css/animate.min.css">
-	
-	<!-- Style new HTML5 elements. -->
-	<!--[if lt IE 9]>
-		<script src="js/html5-shiv.js"><.script>
-	<![endif] -->
-	
+		#button-signup:hover{
+			background: blue;
+			background:-moz-linear-gradient(top,blue 0%,blue 100%);
+			background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,blue),color-stop(100%, blue));
+			background:-webkit-linear-gradient(top,blue 0%, blue 100%);
+			background:-o-linear-gradient(top,blue 0%, blue 100%);
+			background:-ms-linear-gradient(top,blue 0%,blue 100%);
+			background:linear-gradient(top,blue 0%, blue 100%);
+			filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='blue', endColorstr='blue',GradientType=0);
+			padding:10px 15px;
+			color:#fff;
+			font-family:'Helvetica Neue',sans-serif;
+			font-size:16px;
+			border-radius:5px;
+			-moz-border-radius:5px;
+			-webkit-border-radius:5px;
+			border:1px solid #459A00;
+		}
+		
+		#article-block{
+			margin-top: 50px;
+			width: 780px;
+			float: left;
+		}
+		
+		.article{
+			width: 170px;
+			float: left;
+			padding: 5px;
+			margin-right: 10px;
+		}
+			
+		.art-title{
+			background: linear-gradient(silver, white);
+			padding: 1px;
+			font-weight: bold;
+			font-size: .9em;
+			text-align: center;
+			color: #330000;
+		}
+		
+		.art-excerpt{
+			color: #4C0000;
+		}
+		
+		
+		@media only screen and (min-width: 0px) and (max-width: 480px){
+			.index-container{
+				height: 1600px;
+			}
+			
+			#new{
+				width: 470px;
+				padding-left: 10px;
+			}
+			
+			#article-block{
+				padding: 10px;
+				width: 480px;
+				margin-bottom: 50px;
+			}
+		
+			.article{
+				width: 440px;
+				padding: 5px;
+			}
+			
+			.article-pic{
+				margin: 0 auto;
+			}
+
+		}
+		
+		/* Countdown  */
+		
+		h1#countdown-header{
+			color: #7e7e7e;
+			text-align: center;
+			font-size: 44px;
+			letter-spacing: 10px;
+		}
+		
+
+		#body-countdown{
+			margin-top: -100px;
+			width: 900px;
+			background: url('img/Eyes.png') no-repeat center center;
+			height: 500px;
+		}
+
+		#del-countdown{
+			width: 100%;
+			margin: 15% auto;
+		}
+
+		#clock span{
+			float: left;
+			text-align: center;
+			font-size: 84px;
+			margin: 0 2.5%;
+			color: #fff;
+			padding: 20px;
+			width: 20%;
+			border-radius: 20px;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+
+		#clock span:nth-child(1){
+			background: #fa5559;
+		}
+
+		#clock span:nth-child(2){
+			background: #26c2b9;
+		}
+
+		#clock span:nth-child(3){
+			background: #f6be58;
+		}
+
+		#clock span:nth-child(4){
+			background: #2dcb74;
+		}
+
+		#clock:after{
+			content: "";
+			display: block;
+			clear: both;
+		}
+
+		#units span{
+			float: left;
+			width: 25%;
+			text-align: center;
+			margin-top: 38px;
+			color: #7e7e7e;
+			text-transform: uppercase;
+			font-size: 13px;
+			letter-spacing: 2px;
+			text-shadow: 1px 1px 1px rgba(10,10,10, 0.7);
+		}
+
+		span.turn{
+			animation: turn 0.7s ease forwards;
+		}
+
+		@keyframes turn{
+			0%{transform: rotateX(0deg)}
+			100%{transform: rotateX(360deg)}
+		}
+		
+		
+		@media only screen and (min-width: 481px) and (max-width: 768px){
+			#body-countdown{
+				width: 650px;
+				height: 400px;
+			}
+			
+			#clock span{
+				font-size: 44px;
+				padding: 10px;
+				width: 20%;
+			}
+		}
+		
+		@media only screen and (min-width: 0px) and (max-width: 480px){
+			#body-countdown{
+				width: 475px;
+				margin-top: -75px;
+			}
+			
+			#clock span{
+				font-size: 38px;
+				margin: 0 2.5%;
+				padding: 20px;
+				width: 20%;
+			}
+		}
+		
+		/* End of countdown. */	
+	</style>
+
 </head>
 
+
 <body>
-	<div id="page">
-		<div id="wrapper">
+	<div class="index-container">
 		
-			<!-- Header. -->
-			<div id="header">
-				<p class="announcement">Announcement: Stay tuned for our next Fashion SummerStorm!	</p>
-			</div><!-- End of header. -->
-			
-			<!-- Aside. -->
-			<aside>
-				
-				<!-- Logo. -->
-				<div id="logoContainer"><a href="index.php"><img src="img/logo.png" id="logo" alt="New Think Tank Logo"></a></div><!-- Image source: <a href="http://www.freepik.com/free-vector/pink-and-purple-logo-with-two-hearts_848940.htm">Designed by Freepik</a> -->
+		<!-- Countdown. -->
+		<div id="body-countdown">
+			<div id="del-countdown">
+				<h1 id="countdown-header">Countdown to<br/>SummerShow</h1>
+				<div id="clock"></div>
+				<div id="units">
+					<span>Days</span>
+					<span>Hours</span>
+					<span>Minutes</span>
+					<span>Seconds</span>				
+				</div><!-- End of units. -->
+			</div><!-- End of del-countdown. -->
+		</div><!-- End of body-countdown. -->
 
-					<!-- Navigation menu. -->
-					<nav>
-						<span class="nav-btn"></span>
-						<ul class="nav sb-icon-list">
-							<li class="sb-item" id="home">
-								<a href="index"><span class="list-span"><p id="home" class="menuItems">Home</p></span></a>
-							</li>
-							<li class="sb-item">
-								<a href="about"><span class="list-span"><img src="img/about-icon.png" id="first-sb"><p id="about" class="menuItems">About</p></span></a>
-							</li>
-							<li class="sb-item">
-								<a href="contactus"><span class="list-span"><img src="img/contactus-icon.png" id="second-sb"><p id="contactus" class="menuItems">Contact</p></span></a>
-							</li>
-							<li class="sb-item">
-								<a href="gallery"><span class="list-span"><img src="img/gallery-icon.png" id="third-sb"><p id="gallery" class="menuItems">Gallery</p></span></a>
-							</li>
-							<li class="sb-item">
-								<a href="press"><span class="list-span"><img src="img/about-icon.png" id="fourth-sb"><p id="press" class="menuItems">Press</p></span></a>
-							</li>
-						</ul><!-- End of nav sb-icon-list. -->
-					</nav><!-- End of navigation menu. -->
-					
-					<!-- Social media icons. -->
-					<div id="social">
-						<span id="social-title">LET'S TALK</span><br />
-						<a href="#" id="facebook-icon" title="facebook" class="tooltip"><img class="social-icons" src="img/facebook-icon.png"></a>
-						<a href="#" id="twitter-icon" title="twitter" class="tooltip"><img class="social-icons" src="img/twitter-icon.png"></a>
-						<a href="#" id="rss-icon" title="rss" class="tooltip"><img class="social-icons" src="img/rss-icon.png"></a>
-					</div><!-- End of social. -->
-				
-			</aside><!-- End of aside. -->
-			
-			<!-- Files from the contents folder: index.php, about.php (with face.php), contactus.php (with processing_data.php), gallery.php, and press.php. -->
-			<div id="content"></div>
-			
-			<!-- Footer. -->
-			<div id="footer">
-				<div class="footer-text" style="color:#C0C0C0;">
-					<b>Links</b><br/>
-					<a href="#">Models R'Us</a><br/>
-					<a href="#">Glam is Good</a><br/>
-					<a href="#">Golden Accessories</a><br/>
-					<a href="#">Photo Magazine</a><br/>	
-				</div><!-- End of footer-text. -->
-				<div class="footer-text" style="color:#C0C0C0;">
-					<b>Two Hearts Agency</b><br/>
-					3384 Forest Avenue<br>
-					Bayonne, NJ 07002<br/>
-					(201)555-1212<br/>
-					<a href="mailto:#">info@twoheartsagency.com</a>
-				</div><!-- End of footer-text. -->
-			</div><!-- End of footer. -->
-		</div><!-- End of wrapper. -->
-	</div><!-- End of page. -->
+		<!-- New announcement. -->
+		<div id="new">
+			<span id="signup-txt"><span class="first-letter" style="background-color:#C0C0C0; border-radius: 5px;" >H</span>as tollit nonumes eu, duo ut aeque maluisset molestiae. Porro efficiendi cotidieque ea has, ne quo eligendi platonem. Eos fabellas facilisis corrumpit ne. Te nostrum gubergren vis, soluta partiendo cu eam. Et vim putent ponderum, ius apeirian senserit explicari ad.</span>
+			<br />
+		</div><!-- End of new. -->
+		
+		<!-- Article block. -->
+		<div id="article-block">
+		
+			<div class="article first-art">
+				<img src="img/first-tn.png" class="article-pic" /><!-- Image source: <a href="http://www.freepik.com/free-vector/fashionable-icons_796618.htm">Designed by Freepik</a> -->
+				<div class="art-title">Don't Stop Me Now</div>
+				<div class="art-excerpt">
+					Accusamus scripserit vel ea. In omnesque delectus theophrastus nec, ad duo saepe essent elaboraret. Sea ut magna everti.
+				</div><!-- End of art-excerpt. -->
+			</div><!-- End of article. -->
 
-	<!-- jQuery. -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-	
-	<!-- Javascript. -->
-	<script src="js/javascript.js"></script>
+			<div class="article second-art">
+				<img src="img/second-tn.png" class="article-pic" /><!-- Image source: <a href="http://www.freepik.com/free-vector/fashionable-icons_796618.htm">Designed by Freepik</a> -->
+				<div class="art-title">Want to Break Free</div>
+				<div class="art-excerpt">
+					Qui ex novum hendrerit, ad similique vituperata eloquentiam vim. Ea reque facer pro, ne integre assentior. 
+				</div><!-- End of art-excerpt. -->
+			</div><!-- End of article. -->
 
+			<div class="article third-art">
+				<img src="img/third-tn.png" class="article-pic" /><!-- Image source: <a href="http://www.freepik.com/free-vector/fashionable-icons_796618.htm">Designed by Freepik</a> -->
+				<div class="art-title">The Show Must Go</div>
+				<div class="art-excerpt">
+					Ea ius salutatus intellegam reprehendunt, rebum fugit accommodare cum ut. Ut suscipit consequuntur per. <br /> 
+				</div><!-- End of art-excerpt. -->
+			</div><!-- End of article. -->
+
+			<div class="article fourth-art">
+				<img src="img/fourth-tn.png" class="article-pic" /><!-- Image source: <a href="http://www.freepik.com/free-vector/fashionable-icons_796618.htm">Designed by Freepik</a> -->
+				<div class="art-title">A Night at the Opera</div>
+				<div class="art-excerpt">
+					Pri ne probatus accusata elaboraret, tale movet sententiae eu quo. Sale errem deleniti no est, ea nec viderer vivendo.<br />
+				</div><!-- End of art-excerpt. -->
+			</div><!-- End of article. -->
+			
+		</div><!-- End of article-block. -->
+			
+	</div><!-- End of index-container. -->
 </body>
-</html>
